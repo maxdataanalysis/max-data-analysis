@@ -774,10 +774,10 @@
     if (!items.length) return;
 
     var MSG = [
-      "Tick the ones that apply — we'll tell you what that usually means.",
+      "Tick the ones that apply, we'll tell you what that usually means.",
       "Even one of these is usually worth a 15-minute conversation. Most are a few days of work to remove for good.",
       "Two or more is the pattern we see most often. A short call will tell you quickly whether a tool would pay for itself.",
-      "That's a lot of manual work carrying real risk to your results. This is exactly the situation we build for — worth booking a call."
+      "That's a lot of manual work carrying real risk to your results. This is exactly the situation we build for, worth booking a call."
     ];
 
     function update() {

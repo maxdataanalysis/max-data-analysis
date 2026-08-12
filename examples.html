@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Examples — MAX Data Analysis</title>
+<title>Examples, MAX Data Analysis</title>
 <meta name="description" content="Worked examples of custom analysis tools across imaging, flow cytometry, plate assays, behaviour tracking, electrophysiology and field data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <a href="book.html" class="nav-cta">Book a free consultation</a>
+      <a href="book.html" class="nav-cta"><span class="cta-full">Book a free consultation</span><span class="cta-short">Book a call</span></a>
     </nav>
   </div>
 </header>
@@ -37,7 +37,7 @@
   <section style="padding-top:20px;">
     <div class="container">
       <div class="placeholder-note" data-reveal>
-        <strong>Status: illustrative examples.</strong> Every visual on this page is procedurally generated to show the <em>shape</em> of each workflow — it is not real experimental data and not a measurement of real client results. These will be replaced with real client examples, with permission, as soon as they exist.
+        <strong>Status: illustrative examples.</strong> Every visual on this page is procedurally generated to show the <em>shape</em> of each workflow, it is not real experimental data and not a measurement of real client results. These will be replaced with real client examples, with permission, as soon as they exist.
       </div>
 
       <!-- 1. IMAGING -->
@@ -49,10 +49,10 @@
           <div class="ba-handle"></div><div class="ba-knob">⇄</div>
         </div>
         <div class="example-body">
-          <span class="example-tag">Imaging · Illustrative — drag the handle to compare</span>
+          <span class="example-tag">Imaging · Illustrative, drag the handle to compare</span>
           <h3>Counting and measuring cells across a large image batch</h3>
           <p><strong>The problem:</strong> hundreds of fluorescence images per experiment, scored by hand, with counts that shift depending on who did them and when.</p>
-          <p><strong>The tool:</strong> a local application that applies identical segmentation settings to every image in a folder, outlines each object, and exports one results table per experiment — plus the outlined images so you can check the work.</p>
+          <p><strong>The tool:</strong> a local application that applies identical segmentation settings to every image in a folder, outlines each object, and exports one results table per experiment, plus the outlined images so you can check the work.</p>
           <div class="example-stat">
             <div><span class="stat-value accent">Batch</span><span class="stat-label">Same settings on every image</span></div>
             <div><span class="stat-value accent">Auditable</span><span class="stat-label">Outlines saved for checking</span></div>
@@ -70,7 +70,7 @@
           <div class="ba-handle"></div><div class="ba-knob">⇄</div>
         </div>
         <div class="example-body">
-          <span class="example-tag">Cytometry · Illustrative — drag the handle to compare</span>
+          <span class="example-tag">Cytometry · Illustrative, drag the handle to compare</span>
           <h3>Applying the same gating strategy to every sample</h3>
           <p><strong>The problem:</strong> gating re-drawn by hand per sample, so population percentages aren't strictly comparable between batches or between people.</p>
           <p><strong>The tool:</strong> a scripted pipeline that applies your agreed gating strategy to every file, outputs population statistics in one table, and flags samples that fall outside expected ranges for a human to review.</p>
@@ -91,7 +91,7 @@
           <div class="ba-handle"></div><div class="ba-knob">⇄</div>
         </div>
         <div class="example-body">
-          <span class="example-tag">Plate assays · Illustrative — drag the handle to compare</span>
+          <span class="example-tag">Plate assays · Illustrative, drag the handle to compare</span>
           <h3>From raw plate-reader exports to normalised results</h3>
           <p><strong>The problem:</strong> a spreadsheet that grew over years, with manual copy-paste between plates, controls applied inconsistently, and no record of what was corrected.</p>
           <p><strong>The tool:</strong> a local application that reads your instrument's export format directly, applies controls and normalisation, fits standard or dose–response curves, flags failed wells, and writes out both the results and a log of every step applied.</p>
@@ -112,9 +112,9 @@
           <div class="ba-handle"></div><div class="ba-knob">⇄</div>
         </div>
         <div class="example-body">
-          <span class="example-tag">Behaviour · Illustrative — drag the handle to compare</span>
+          <span class="example-tag">Behaviour · Illustrative, drag the handle to compare</span>
           <h3>Turning tracked positions into behavioural metrics</h3>
-          <p><strong>The problem:</strong> tracking software produces coordinates, but the metrics you actually report — distance, time in zone, entries, speed profiles — still get calculated by hand in a spreadsheet per animal.</p>
+          <p><strong>The problem:</strong> tracking software produces coordinates, but the metrics you actually report, distance, time in zone, entries, speed profiles, still get calculated by hand in a spreadsheet per animal.</p>
           <p><strong>The tool:</strong> a tool that ingests tracking output, computes your defined metrics per subject and per zone, and produces a summary table across the whole cohort in one run.</p>
           <div class="example-stat">
             <div><span class="stat-value accent">Per subject</span><span class="stat-label">Metrics computed automatically</span></div>
@@ -133,9 +133,9 @@
           <div class="ba-handle"></div><div class="ba-knob">⇄</div>
         </div>
         <div class="example-body">
-          <span class="example-tag">Signals · Illustrative — drag the handle to compare</span>
+          <span class="example-tag">Signals · Illustrative, drag the handle to compare</span>
           <h3>Detecting events across long multi-channel recordings</h3>
-          <p><strong>The problem:</strong> scrolling through long traces to mark events by eye — slow, tiring, and hard to defend as consistent between recordings or between people.</p>
+          <p><strong>The problem:</strong> scrolling through long traces to mark events by eye, slow, tiring, and hard to defend as consistent between recordings or between people.</p>
           <p><strong>The tool:</strong> a detector using criteria you define once, applied identically across every channel and every recording, with detected events marked on the trace so you can verify them rather than trust them blindly.</p>
           <div class="example-stat">
             <div><span class="stat-value accent">Defined once</span><span class="stat-label">Criteria you set and agree</span></div>
@@ -154,9 +154,9 @@
           <div class="ba-handle"></div><div class="ba-knob">⇄</div>
         </div>
         <div class="example-body">
-          <span class="example-tag">Field data · Illustrative — drag the handle to compare</span>
+          <span class="example-tag">Field data · Illustrative, drag the handle to compare</span>
           <h3>Cleaning and combining messy field records</h3>
-          <p><strong>The problem:</strong> years of records across multiple spreadsheets, collected by different people with different conventions, inconsistent naming and gaps — hours of cleaning before any analysis can start.</p>
+          <p><strong>The problem:</strong> years of records across multiple spreadsheets, collected by different people with different conventions, inconsistent naming and gaps, hours of cleaning before any analysis can start.</p>
           <p><strong>The tool:</strong> a tool that applies your validation rules, standardises names and units, merges everything into one clean dataset, and reports exactly what it changed and what it couldn't resolve.</p>
           <div class="example-stat">
             <div><span class="stat-value accent">Validated</span><span class="stat-label">Your rules, applied every time</span></div>
@@ -209,7 +209,7 @@
     <div class="footer-bottom">
       <div>
         <div>© 2026 MAX Data Analysis. All rights reserved.</div>
-        <div class="legal-note">[REGISTERED ENTITY NAME AND ADDRESS — TO BE ADDED BEFORE LAUNCH]</div>
+        <div class="legal-note">[REGISTERED ENTITY NAME AND ADDRESS, TO BE ADDED BEFORE LAUNCH]</div>
       </div>
       <div><a href="mailto:hello@maxdataanalysis.com">hello@maxdataanalysis.com</a></div>
     </div>
