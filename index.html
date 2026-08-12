@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAX Data Analysis — Custom analysis tools for researchers, priced for research budgets</title>
+<meta name="description" content="Stuck with data to analyse? We build a tool that does exactly your analysis — imaging, cytometry, plate assays, tracking, signals, field data and more. Runs on your computer. Book a free 15-minute consultation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>MAX Data Analysis</a>
+    <nav class="main-nav">
+      <a href="how-it-works.html">How it works</a>
+      <a href="examples.html">Examples</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html" class="nav-cta">Book a free consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero hero-aurora">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow" data-reveal>For researchers without a data analyst</span>
+          <h1 class="mt-0"><span class="kinetic">Stuck with data to analyse?</span></h1>
+          <p class="lede" data-reveal style="--d:100ms">Your experiment worked. Now the analysis is the bottleneck — no analyst in the group, no tool that fits your data, and no budget for a full software project.</p>
+          <p class="lede" data-reveal style="--d:160ms"><strong>We build you a tool that does exactly your analysis.</strong> It runs on your own computer, it's yours to keep, and it's priced for a research budget.</p>
+          <div class="hero-actions" data-reveal style="--d:240ms">
+            <a href="book.html" class="btn btn-primary btn-lg">Book a free 15-minute consultation</a>
+            <a href="contact.html" class="btn btn-ghost btn-lg">Request more info</a>
+          </div>
+          <p class="hero-note" data-reveal style="--d:300ms">No obligation. We'll tell you honestly if it's not a good fit for your data.</p>
+        </div>
+        <div data-reveal style="--d:180ms">
+          <div class="scope" data-scope>
+            <canvas></canvas>
+            <span class="scope-badge">Illustrative</span>
+            <div class="scope-hud">
+              <div>
+                <span class="scope-label">Objects detected</span>
+                <span class="scope-count" data-scope-count>0</span>
+              </div>
+              <div class="scope-label">Batch running…</div>
+            </div>
+          </div>
+          <p class="scope-caption">Simulated visualisation — not real experimental data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — DATA TYPES -->
+  <section class="deep hscroll" id="domains" data-hscroll>
+    <div class="hscroll-inner">
+     <div class="container">
+      <div class="section-head hscroll-head">
+        <span class="eyebrow" data-reveal>What we work with</span>
+        <h2><span class="kinetic">Whatever your experiment produces, we build the tool that reads it</span></h2>
+        <p data-reveal>These are the kinds of data we're asked about most often — imaging, flow cytometry, plate assays, behaviour and movement, electrophysiology and time series, ecology and field records, <strong>and many more besides</strong>. If your data isn't here, it doesn't mean we can't help.</p>
+      </div>
+
+      <div class="hscroll-viewport">
+        <div class="hscroll-track">
+
+          <article class="hscroll-item niche n-imaging">
+            <div class="viz" data-viz="microscopy" data-seed="1101" data-mode="analysed"></div>
+            <div class="niche-body">
+              <span class="niche-chip">Imaging</span>
+              <h3>Microscopy &amp; image analysis</h3>
+              <p>Turning fields of images into numbers you can put in a figure — consistently, across a whole batch.</p>
+              <ul class="niche-list">
+                <li>Cell and nuclei counting</li>
+                <li>Colocalisation and intensity measurement</li>
+                <li>Morphology and size distributions</li>
+                <li>Wound-healing and time-lapse quantification</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="hscroll-item niche n-cyto">
+            <div class="viz" data-viz="cytometry" data-seed="2202" data-mode="analysed"></div>
+            <div class="niche-body">
+              <span class="niche-chip">Cytometry</span>
+              <h3>Flow cytometry workflows</h3>
+              <p>Applying the same gating logic across every sample, so batches stay comparable and re-analysis isn't a manual job.</p>
+              <ul class="niche-list">
+                <li>Reproducible, scripted gating</li>
+                <li>Population statistics across batches</li>
+                <li>Batch-to-batch consistency checks</li>
+                <li>Export into your own statistics workflow</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="hscroll-item niche n-plate">
+            <div class="viz" data-viz="plate" data-seed="3303" data-mode="analysed"></div>
+            <div class="niche-body">
+              <span class="niche-chip">Plate assays</span>
+              <h3>qPCR, ELISA &amp; plate readers</h3>
+              <p>Getting from raw instrument exports to normalised, quality-checked results without a fragile spreadsheet.</p>
+              <ul class="niche-list">
+                <li>Plate normalisation and controls</li>
+                <li>Standard and dose–response curve fitting</li>
+                <li>Automated QC flags for bad wells</li>
+                <li>Merging many plates into one dataset</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="hscroll-item niche n-track">
+            <div class="viz" data-viz="tracking" data-seed="4404" data-mode="analysed"></div>
+            <div class="niche-body">
+              <span class="niche-chip">Behaviour</span>
+              <h3>Movement &amp; behaviour tracking</h3>
+              <p>Converting hours of recordings into trajectory metrics, without watching every frame yourself.</p>
+              <ul class="niche-list">
+                <li>Path length, speed and turning metrics</li>
+                <li>Zone occupancy and entries</li>
+                <li>Event scoring from tracked positions</li>
+                <li>Batch processing across many recordings</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="hscroll-item niche n-signal">
+            <div class="viz" data-viz="signal" data-seed="5505" data-mode="analysed"></div>
+            <div class="niche-body">
+              <span class="niche-chip">Signals</span>
+              <h3>Electrophysiology &amp; time series</h3>
+              <p>Detecting and counting events in long recordings using criteria you define once and apply everywhere.</p>
+              <ul class="niche-list">
+                <li>Spike and event detection</li>
+                <li>Multi-channel batch processing</li>
+                <li>Trace quality control</li>
+                <li>Summary tables per recording</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="hscroll-item niche n-eco">
+            <div class="viz" data-viz="ecology" data-seed="6606" data-mode="analysed"></div>
+            <div class="niche-body">
+              <span class="niche-chip">Field data</span>
+              <h3>Ecology &amp; field datasets</h3>
+              <p>Cleaning and combining messy, real-world records into something you can actually analyse and plot.</p>
+              <ul class="niche-list">
+                <li>Cleaning and merging inconsistent records</li>
+                <li>Automated validation rules</li>
+                <li>Summary statistics and indices</li>
+                <li>Repeatable figures for reports</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="hscroll-item niche">
+            <div class="viz" data-viz="microscopy" data-seed="7707" data-mode="raw"></div>
+            <div class="niche-body">
+              <span class="niche-chip">And more</span>
+              <h3>Something else entirely?</h3>
+              <p>The list above is where we get asked most — not a closed list.</p>
+              <ul class="niche-list">
+                <li>Spectrometry, growth curves, colony counts</li>
+                <li>Phenotyping and histology scoring</li>
+                <li>Sensor logs and survey records</li>
+              </ul>
+              <p style="margin-top:auto; padding-top:16px;"><a href="book.html" class="btn btn-primary">Ask about your data</a></p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="hscroll-progress"><span></span></div>
+      <div class="hscroll-note">
+        <span>Keep scrolling to move through them</span>
+        <span>Illustrative visuals — not real experimental data</span>
+      </div>
+     </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITY WHEEL -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>Capabilities</span>
+        <h2><span class="kinetic">What a tool can actually do</span></h2>
+        <p data-reveal>The capabilities turn as you scroll — or drag the arc yourself, and click one to read more. Most projects combine two or three of these into a single tool.</p>
+      </div>
+
+      <div class="wheel-wrap" data-wheel>
+        <div class="wheel">
+          <div class="wheel-ring"></div>
+          <span class="wheel-hint">Scroll or drag to turn</span>
+
+          <div class="wheel-node" tabindex="0" style="--node-c:#3D7DFF" data-color="#3D7DFF" data-tag="Detection" data-title="Counting &amp; detection"
+               data-desc="Finding and counting objects — cells, colonies, particles, events — using the same criteria on every image or recording, so the numbers don't shift depending on who ran the analysis.">Counting</div>
+
+          <div class="wheel-node" tabindex="0" style="--node-c:#8B5CF6" data-color="#8B5CF6" data-tag="Segmentation" data-title="Segmentation &amp; outlining"
+               data-desc="Separating objects from background and from each other — including touching or overlapping ones — so each can be measured individually rather than as a single blob.">Segmenting</div>
+
+          <div class="wheel-node" tabindex="0" style="--node-c:#F0499B" data-color="#F0499B" data-tag="Measurement" data-title="Measurement &amp; morphometry"
+               data-desc="Extracting size, shape, intensity and spatial features per object, exported as a structured table you can take straight into your own statistics.">Measuring</div>
+
+          <div class="wheel-node" tabindex="0" style="--node-c:#B8791A" data-color="#B8791A" data-tag="Normalisation" data-title="Normalisation &amp; curve fitting"
+               data-desc="Applying controls, correcting between plates or sessions, and fitting standard or dose–response curves — the steps that make results comparable across an experiment.">Normalising</div>
+
+          <div class="wheel-node" tabindex="0" style="--node-c:#0E9BB5" data-color="#0E9BB5" data-tag="Batch" data-title="Batch processing"
+               data-desc="Running the whole pipeline across hundreds or thousands of files in one go, unattended, with a log of what was processed and what failed.">Batching</div>
+
+          <div class="wheel-node" tabindex="0" style="--node-c:#159C69" data-color="#159C69" data-tag="Cleaning" data-title="Data cleaning &amp; merging"
+               data-desc="Taking inconsistent exports, mismatched naming and scattered files, and turning them into one clean dataset with validation rules that catch problems early.">Cleaning</div>
+
+          <div class="wheel-node" tabindex="0" style="--node-c:#2A5FD9" data-color="#2A5FD9" data-tag="Quality" data-title="Quality control"
+               data-desc="Automatic flags for out-of-range values, failed controls, bad wells or corrupted files — so problems surface before they reach a figure.">Checking</div>
+
+          <div class="wheel-node" tabindex="0" style="--node-c:#C4407F" data-color="#C4407F" data-tag="Output" data-title="Figures &amp; exports"
+               data-desc="Producing the tables and plots you actually need at the end, in a consistent format, ready to drop into your analysis or a draft figure.">Exporting</div>
+        </div>
+
+        <div class="wheel-panel">
+          <span class="wp-tag" data-wheel-tag>Detection</span>
+          <h3 class="wp-title" data-wheel-title>Counting &amp; detection</h3>
+          <p class="wp-desc" data-wheel-desc>Finding and counting objects — cells, colonies, particles, events — using the same criteria on every image or recording, so the numbers don't shift depending on who ran the analysis.</p>
+          <div class="wheel-nav">
+            <button class="carousel-btn" data-wheel-prev aria-label="Previous capability">‹</button>
+            <button class="carousel-btn" data-wheel-next aria-label="Next capability">›</button>
+            <span class="wheel-count" data-wheel-count>1 / 8</span>
+          </div>
+          <div class="pill-row">
+            <span class="chip">Windows</span>
+            <span class="chip">macOS</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Runs offline</span>
+            <span class="chip">No coding required to use</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>Drag to compare</span>
+        <h2><span class="kinetic">From raw data to structured results</span></h2>
+        <p data-reveal>Drag the handle across each panel. Left is what comes off the instrument. Right is what a configured tool gives back — the same way, every time.</p>
+      </div>
+      <div class="grid-2">
+        <div data-reveal>
+          <div class="ba" data-ba data-type="microscopy" data-seed="7731">
+            <canvas class="before"></canvas>
+            <div class="after-wrap"><canvas class="after"></canvas></div>
+            <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+            <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+          </div>
+          <p class="viz-cap">Microscopy — segmentation and counting. Illustrative.</p>
+        </div>
+        <div data-reveal style="--d:120ms">
+          <div class="ba" data-ba data-type="cytometry" data-seed="8842">
+            <canvas class="before"></canvas>
+            <div class="after-wrap"><canvas class="after"></canvas></div>
+            <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+            <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+          </div>
+          <p class="viz-cap">Flow cytometry — gating and population statistics. Illustrative.</p>
+        </div>
+        <div data-reveal>
+          <div class="ba" data-ba data-type="signal" data-seed="9953">
+            <canvas class="before"></canvas>
+            <div class="after-wrap"><canvas class="after"></canvas></div>
+            <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+            <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+          </div>
+          <p class="viz-cap">Electrophysiology — event detection across channels. Illustrative.</p>
+        </div>
+        <div data-reveal style="--d:120ms">
+          <div class="ba" data-ba data-type="tracking" data-seed="1264">
+            <canvas class="before"></canvas>
+            <div class="after-wrap"><canvas class="after"></canvas></div>
+            <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+            <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+          </div>
+          <p class="viz-cap">Behaviour tracking — trajectory and zone metrics. Illustrative.</p>
+        </div>
+      </div>
+      <p class="center" style="margin-top:28px;" data-reveal><a href="examples.html" class="btn btn-ghost">See all worked examples</a></p>
+    </div>
+  </section>
+
+  <!-- WHY IT COSTS LESS -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>Why it costs less</span>
+        <h2><span class="kinetic">Priced for a research budget, not an enterprise one</span></h2>
+        <p data-reveal>We're not cheap by cutting corners — we're cheaper because of how the work is scoped. Three specific reasons:</p>
+      </div>
+      <div class="cost-grid">
+        <div class="cost-card cc-b1" data-reveal>
+          <span class="cc-num">01</span>
+          <h3>We build on proven open-source engines</h3>
+          <p>We don't write analysis from scratch. We assemble and configure established, widely-used scientific libraries — so you're paying for the configuration and packaging, not for reinventing methods the field already trusts.</p>
+        </div>
+        <div class="cost-card cc-b2" data-reveal style="--d:100ms">
+          <span class="cc-num">02</span>
+          <h3>Small, fixed scope</h3>
+          <p>One tool, one job, agreed in writing before work starts. No open-ended engagements, no discovery phase billed by the month, no scope creep priced back to you.</p>
+        </div>
+        <div class="cost-card cc-b3" data-reveal style="--d:200ms">
+          <span class="cc-num">03</span>
+          <h3>No platform to pay for</h3>
+          <p>The tool runs on computers you already own. There's no per-seat licence, no annual subscription, and no cloud storage bill attached to your data.</p>
+        </div>
+      </div>
+      <p class="small center" style="margin-top:26px;" data-reveal>Every project is quoted individually after a free consultation, so you see the number before committing to anything.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS ROADMAP -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>The process</span>
+        <h2><span class="kinetic">From first call to working tool</span></h2>
+        <p data-reveal>Five steps, start to finish. Most projects run in days to a few weeks, not months.</p>
+      </div>
+
+      <div class="vtl">
+        <div class="vtl-rail"><span></span></div>
+
+        <div class="vtl-step vtl-1">
+          <div class="vtl-dot">01</div>
+          <div class="vtl-card">
+            <span class="vtl-when">Day 0 · 15 minutes</span>
+            <h3>Free consultation</h3>
+            <p>You describe what you need to measure and show a few sample files if you have them. We tell you honestly whether it's feasible — and if it isn't, we say so on the call rather than after an invoice.</p>
+          </div>
+        </div>
+
+        <div class="vtl-step vtl-2">
+          <div class="vtl-dot">02</div>
+          <div class="vtl-card">
+            <span class="vtl-when">Within a few days</span>
+            <h3>Fixed-scope quote</h3>
+            <p>A written scope and a fixed price, covering exactly what the tool will do and what it won't. Nothing gets built until you've accepted it, so there's no open-ended bill forming in the background.</p>
+          </div>
+        </div>
+
+        <div class="vtl-step vtl-3">
+          <div class="vtl-dot">03</div>
+          <div class="vtl-card">
+            <span class="vtl-when">Days to a few weeks</span>
+            <h3>We build it</h3>
+            <p>Configured and tested against your own sample files, using proven open-source engines rather than untested one-off code. Reviewed from both the scientific and technical side before it reaches you.</p>
+          </div>
+        </div>
+
+        <div class="vtl-step vtl-4">
+          <div class="vtl-dot">04</div>
+          <div class="vtl-card">
+            <span class="vtl-when">Delivery day</span>
+            <h3>Installed &amp; documented</h3>
+            <p>The tool on your own machine, with plain-language instructions, a note of its known limits, and the outputs in a format you can take straight into your own analysis.</p>
+          </div>
+        </div>
+
+        <div class="vtl-step vtl-5">
+          <div class="vtl-dot">05</div>
+          <div class="vtl-card">
+            <span class="vtl-when">After delivery</span>
+            <h3>Support window</h3>
+            <p>A defined period of email support for questions and fixes, agreed in your quote. Training, extra features and longer support are available separately — never assumed, never billed by surprise.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="center" style="margin-top:40px;" data-reveal>
+        <a href="book.html" class="btn btn-primary btn-lg">Start with a free consultation</a>
+        <a href="how-it-works.html" class="btn btn-ghost btn-lg">Read the full process</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- GOOD FIT -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>Fit</span>
+        <h2><span class="kinetic">This is built for you if…</span></h2>
+        <p data-reveal>Most of the researchers we work with recognise themselves in at least three of these.</p>
+      </div>
+
+      <div class="fit-cards">
+        <div class="fit-card" data-reveal>
+          <div class="fit-ico">✎</div>
+          <div>
+            <h3>You're doing it by hand</h3>
+            <p>An analysis that a computer should be doing is eating hours that belong to your actual research.</p>
+          </div>
+        </div>
+        <div class="fit-card" data-reveal style="--d:70ms">
+          <div class="fit-ico">↻</div>
+          <div>
+            <h3>It happens again and again</h3>
+            <p>A recurring need, not a one-off — so the tool keeps paying back long after it's delivered.</p>
+          </div>
+        </div>
+        <div class="fit-card" data-reveal style="--d:140ms">
+          <div class="fit-ico">✓</div>
+          <div>
+            <h3>Results have to be reproducible</h3>
+            <p>You need the same input to give the same answer months later, whoever runs it — for reviewers or for your own confidence.</p>
+          </div>
+        </div>
+        <div class="fit-card" data-reveal style="--d:210ms">
+          <div class="fit-ico">⌂</div>
+          <div>
+            <h3>Your data has to stay in-house</h3>
+            <p>Confidential or unpublished work that can't be uploaded to a cloud platform. Everything we deliver runs locally.</p>
+          </div>
+        </div>
+        <div class="fit-card" data-reveal style="--d:280ms">
+          <div class="fit-ico">⚙</div>
+          <div>
+            <h3>You run a core facility</h3>
+            <p>The same request keeps arriving from different users, and standardising it would free up real capacity.</p>
+          </div>
+        </div>
+        <div class="fit-card" data-reveal style="--d:350ms">
+          <div class="fit-ico">€</div>
+          <div>
+            <h3>You have a budget, not a big one</h3>
+            <p>You've priced custom software before and the number didn't fit the grant — but the problem hasn't gone away.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="center" style="margin-top:34px;" data-reveal>
+        <a href="book.html" class="btn btn-primary btn-lg">Book a free 15-minute consultation</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="deep">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-reveal>Who's behind this</span>
+        <h2><span class="kinetic">A team of experts with decades of combined experience</span></h2>
+        <p data-reveal>Our team brings decades of combined experience across life science and bioinformatics. Every project is reviewed from both sides — scientific and technical — so the tool answers the right research question and is built properly. More on the <a href="about.html">About page</a>.</p>
+      </div>
+      <div class="trust-strip" data-reveal>
+        <div class="trust-item"><span class="num"><span data-count="20" data-suffix="+">0</span></span><span class="label">Years of research experience on the team</span></div>
+        <div class="trust-item"><span class="num"><span data-count="6" data-suffix="+">0</span></span><span class="label">Kinds of research data we build tools for</span></div>
+        <div class="trust-item"><span class="num"><span data-count="100" data-suffix="%">0</span></span><span class="label">Of delivered tools run locally on your own computer</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOUNDS FAMILIAR (final qualifier) -->
+  <section class="alt" id="sounds-familiar">
+    <div class="container">
+      <div class="section-head" style="max-width:760px;">
+        <span class="eyebrow" data-reveal>Sound familiar?</span>
+        <h2><span class="kinetic">Does any of this sound like your week?</span></h2>
+        <p data-reveal>Tick the ones that apply to you — we'll tell you what that usually means.</p>
+      </div>
+
+      <div class="pain-list" data-pain>
+        <button type="button" class="pain-item" data-reveal>
+          <span class="pain-box">✓</span>
+          <span>Your PhD student is spending more time scoring data than running experiments</span>
+        </button>
+        <button type="button" class="pain-item" data-reveal style="--d:50ms">
+          <span class="pain-box">✓</span>
+          <span>The paper is written, but the figures are waiting on an analysis nobody has time to finish</span>
+        </button>
+        <button type="button" class="pain-item" data-reveal style="--d:100ms">
+          <span class="pain-box">✓</span>
+          <span>A reviewer asked you to reanalyse, and reproducing the original numbers is harder than it should be</span>
+        </button>
+        <button type="button" class="pain-item" data-reveal style="--d:150ms">
+          <span class="pain-box">✓</span>
+          <span>The person who wrote your lab's analysis script finished their contract and left</span>
+        </button>
+        <button type="button" class="pain-item" data-reveal style="--d:200ms">
+          <span class="pain-box">✓</span>
+          <span>Every instrument exports a different format, and stitching them together is a manual job each time</span>
+        </button>
+        <button type="button" class="pain-item" data-reveal style="--d:250ms">
+          <span class="pain-box">✓</span>
+          <span>Two people analysing the same samples get results that don't quite agree</span>
+        </button>
+        <button type="button" class="pain-item" data-reveal style="--d:300ms">
+          <span class="pain-box">✓</span>
+          <span>Your grant covers consumables and reagents, but there's no line for a bioinformatician</span>
+        </button>
+        <button type="button" class="pain-item" data-reveal style="--d:350ms">
+          <span class="pain-box">✓</span>
+          <span>You've put off a whole analysis because setting it up would take longer than doing it by hand — once</span>
+        </button>
+        <button type="button" class="pain-item" data-reveal style="--d:400ms">
+          <span class="pain-box">✓</span>
+          <span>The same request comes to your core facility from a different user every few weeks</span>
+        </button>
+      </div>
+
+      <div class="pain-tally" data-pain-tally data-reveal>
+        <div>
+          <span class="pt-count" data-pain-count>Nothing ticked yet</span>
+          <p class="pt-msg" data-pain-msg>Tick the ones that apply — we'll tell you what that usually means.</p>
+        </div>
+        <div class="hero-actions">
+          <a href="book.html" class="btn btn-primary">Book a free 15-minute consultation</a>
+          <a href="contact.html" class="btn btn-ghost">Request more info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-band" data-reveal>
+        <h2><span class="kinetic">Tell us what you're trying to measure</span></h2>
+        <p>A free 15-minute conversation is the fastest way to find out if this is a good fit for your data — and roughly what it would cost.</p>
+        <div class="hero-actions" style="justify-content:center; margin-top:10px;">
+          <a href="book.html" class="btn btn-primary btn-lg">Book a free 15-minute consultation</a>
+          <a href="contact.html" class="btn btn-ghost btn-lg">Request more info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="color:var(--ink);"><span class="logo-mark"></span>MAX Data Analysis</a>
+        <p class="small" style="margin-top:12px; max-width:340px;">Custom analysis tools for life-science researchers. Built for your experiment. Runs on your computer. Priced for a research budget.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="examples.html">Examples</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="book.html">Book a consultation</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="cookies.html">Cookie policy</a>
+        <a href="terms.html">Terms of service</a>
+        <a href="license.html">Software licence</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <div>© 2026 MAX Data Analysis. All rights reserved.</div>
+        <div class="legal-note">[REGISTERED ENTITY NAME AND ADDRESS — TO BE ADDED BEFORE LAUNCH]</div>
+      </div>
+      <div><a href="mailto:hello@maxdataanalysis.com">hello@maxdataanalysis.com</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

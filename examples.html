@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Examples — MAX Data Analysis</title>
+<meta name="description" content="Worked examples of custom analysis tools across imaging, flow cytometry, plate assays, behaviour tracking, electrophysiology and field data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>MAX Data Analysis</a>
+    <nav class="main-nav">
+      <a href="how-it-works.html">How it works</a>
+      <a href="examples.html" class="active">Examples</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html" class="nav-cta">Book a free consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero hero-aurora" style="padding-bottom:24px;">
+    <div class="container">
+      <span class="eyebrow" data-reveal>Examples</span>
+      <h1 class="mt-0" style="max-width:800px;"><span class="kinetic">Six problems we can solve, and what the tool looks like</span></h1>
+      <p class="lede" data-reveal>Drag the handle on any panel to see the difference between what comes off the instrument and what a configured tool gives back.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:20px;">
+    <div class="container">
+      <div class="placeholder-note" data-reveal>
+        <strong>Status: illustrative examples.</strong> Every visual on this page is procedurally generated to show the <em>shape</em> of each workflow — it is not real experimental data and not a measurement of real client results. These will be replaced with real client examples, with permission, as soon as they exist.
+      </div>
+
+      <!-- 1. IMAGING -->
+      <div class="example" data-reveal>
+        <div class="ba" data-ba data-type="microscopy" data-seed="3311" style="aspect-ratio:16/7;">
+          <canvas class="before"></canvas>
+          <div class="after-wrap"><canvas class="after"></canvas></div>
+          <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+          <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+        </div>
+        <div class="example-body">
+          <span class="example-tag">Imaging · Illustrative — drag the handle to compare</span>
+          <h3>Counting and measuring cells across a large image batch</h3>
+          <p><strong>The problem:</strong> hundreds of fluorescence images per experiment, scored by hand, with counts that shift depending on who did them and when.</p>
+          <p><strong>The tool:</strong> a local application that applies identical segmentation settings to every image in a folder, outlines each object, and exports one results table per experiment — plus the outlined images so you can check the work.</p>
+          <div class="example-stat">
+            <div><span class="stat-value accent">Batch</span><span class="stat-label">Same settings on every image</span></div>
+            <div><span class="stat-value accent">Auditable</span><span class="stat-label">Outlines saved for checking</span></div>
+            <div><span class="stat-value accent">One table</span><span class="stat-label">Ready for your statistics</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. CYTOMETRY -->
+      <div class="example" data-reveal>
+        <div class="ba" data-ba data-type="cytometry" data-seed="5820" style="aspect-ratio:16/7;">
+          <canvas class="before"></canvas>
+          <div class="after-wrap"><canvas class="after"></canvas></div>
+          <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+          <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+        </div>
+        <div class="example-body">
+          <span class="example-tag">Cytometry · Illustrative — drag the handle to compare</span>
+          <h3>Applying the same gating strategy to every sample</h3>
+          <p><strong>The problem:</strong> gating re-drawn by hand per sample, so population percentages aren't strictly comparable between batches or between people.</p>
+          <p><strong>The tool:</strong> a scripted pipeline that applies your agreed gating strategy to every file, outputs population statistics in one table, and flags samples that fall outside expected ranges for a human to review.</p>
+          <div class="example-stat">
+            <div><span class="stat-value accent">Consistent</span><span class="stat-label">One strategy, every sample</span></div>
+            <div><span class="stat-value accent">Flagged</span><span class="stat-label">Outliers surfaced for review</span></div>
+            <div><span class="stat-value accent">Reproducible</span><span class="stat-label">Re-runnable months later</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. PLATE -->
+      <div class="example" data-reveal>
+        <div class="ba" data-ba data-type="plate" data-seed="9142" style="aspect-ratio:16/7;">
+          <canvas class="before"></canvas>
+          <div class="after-wrap"><canvas class="after"></canvas></div>
+          <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+          <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+        </div>
+        <div class="example-body">
+          <span class="example-tag">Plate assays · Illustrative — drag the handle to compare</span>
+          <h3>From raw plate-reader exports to normalised results</h3>
+          <p><strong>The problem:</strong> a spreadsheet that grew over years, with manual copy-paste between plates, controls applied inconsistently, and no record of what was corrected.</p>
+          <p><strong>The tool:</strong> a local application that reads your instrument's export format directly, applies controls and normalisation, fits standard or dose–response curves, flags failed wells, and writes out both the results and a log of every step applied.</p>
+          <div class="example-stat">
+            <div><span class="stat-value accent">Normalised</span><span class="stat-label">Controls applied identically</span></div>
+            <div><span class="stat-value accent">Fitted</span><span class="stat-label">Curves generated automatically</span></div>
+            <div><span class="stat-value accent">Logged</span><span class="stat-label">Every correction recorded</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. TRACKING -->
+      <div class="example" data-reveal>
+        <div class="ba" data-ba data-type="tracking" data-seed="2277" style="aspect-ratio:16/7;">
+          <canvas class="before"></canvas>
+          <div class="after-wrap"><canvas class="after"></canvas></div>
+          <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+          <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+        </div>
+        <div class="example-body">
+          <span class="example-tag">Behaviour · Illustrative — drag the handle to compare</span>
+          <h3>Turning tracked positions into behavioural metrics</h3>
+          <p><strong>The problem:</strong> tracking software produces coordinates, but the metrics you actually report — distance, time in zone, entries, speed profiles — still get calculated by hand in a spreadsheet per animal.</p>
+          <p><strong>The tool:</strong> a tool that ingests tracking output, computes your defined metrics per subject and per zone, and produces a summary table across the whole cohort in one run.</p>
+          <div class="example-stat">
+            <div><span class="stat-value accent">Per subject</span><span class="stat-label">Metrics computed automatically</span></div>
+            <div><span class="stat-value accent">Zones</span><span class="stat-label">Occupancy and entries</span></div>
+            <div><span class="stat-value accent">Cohort</span><span class="stat-label">One table for the whole study</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. SIGNALS -->
+      <div class="example" data-reveal>
+        <div class="ba" data-ba data-type="signal" data-seed="6431" style="aspect-ratio:16/7;">
+          <canvas class="before"></canvas>
+          <div class="after-wrap"><canvas class="after"></canvas></div>
+          <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+          <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+        </div>
+        <div class="example-body">
+          <span class="example-tag">Signals · Illustrative — drag the handle to compare</span>
+          <h3>Detecting events across long multi-channel recordings</h3>
+          <p><strong>The problem:</strong> scrolling through long traces to mark events by eye — slow, tiring, and hard to defend as consistent between recordings or between people.</p>
+          <p><strong>The tool:</strong> a detector using criteria you define once, applied identically across every channel and every recording, with detected events marked on the trace so you can verify them rather than trust them blindly.</p>
+          <div class="example-stat">
+            <div><span class="stat-value accent">Defined once</span><span class="stat-label">Criteria you set and agree</span></div>
+            <div><span class="stat-value accent">Verifiable</span><span class="stat-label">Events marked on the trace</span></div>
+            <div><span class="stat-value accent">Multi-channel</span><span class="stat-label">All channels in one pass</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. ECOLOGY -->
+      <div class="example" data-reveal>
+        <div class="ba" data-ba data-type="ecology" data-seed="8125" style="aspect-ratio:16/7;">
+          <canvas class="before"></canvas>
+          <div class="after-wrap"><canvas class="after"></canvas></div>
+          <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
+          <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+        </div>
+        <div class="example-body">
+          <span class="example-tag">Field data · Illustrative — drag the handle to compare</span>
+          <h3>Cleaning and combining messy field records</h3>
+          <p><strong>The problem:</strong> years of records across multiple spreadsheets, collected by different people with different conventions, inconsistent naming and gaps — hours of cleaning before any analysis can start.</p>
+          <p><strong>The tool:</strong> a tool that applies your validation rules, standardises names and units, merges everything into one clean dataset, and reports exactly what it changed and what it couldn't resolve.</p>
+          <div class="example-stat">
+            <div><span class="stat-value accent">Validated</span><span class="stat-label">Your rules, applied every time</span></div>
+            <div><span class="stat-value accent">Merged</span><span class="stat-label">One dataset from many files</span></div>
+            <div><span class="stat-value accent">Transparent</span><span class="stat-label">Report of every change made</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="small" data-reveal>Working with something not listed here? These are the areas we've built for most, not a closed list. The fastest way to find out is a short conversation.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-band" data-reveal>
+        <h2><span class="kinetic">Recognise your own problem here?</span></h2>
+        <p>Book a free 15-minute consultation and describe what you're working with.</p>
+        <div class="hero-actions" style="justify-content:center; margin-top:10px;">
+          <a href="book.html" class="btn btn-primary btn-lg">Book a free consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="color:var(--ink);"><span class="logo-mark"></span>MAX Data Analysis</a>
+        <p class="small" style="margin-top:12px; max-width:340px;">Custom analysis tools for life-science researchers. Built for your experiment. Runs on your computer. Priced for a research budget.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="examples.html">Examples</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="book.html">Book a consultation</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="cookies.html">Cookie policy</a>
+        <a href="terms.html">Terms of service</a>
+        <a href="license.html">Software licence</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <div>© 2026 MAX Data Analysis. All rights reserved.</div>
+        <div class="legal-note">[REGISTERED ENTITY NAME AND ADDRESS — TO BE ADDED BEFORE LAUNCH]</div>
+      </div>
+      <div><a href="mailto:hello@maxdataanalysis.com">hello@maxdataanalysis.com</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

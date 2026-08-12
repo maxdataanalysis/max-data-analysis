@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a free consultation — MAX Data Analysis</title>
+<meta name="description" content="Tell us what you're trying to measure and book a free 15-minute consultation with MAX Data Analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>MAX Data Analysis</a>
+    <nav class="main-nav">
+      <a href="how-it-works.html">How it works</a>
+      <a href="examples.html">Examples</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html" class="nav-cta active">Book a free consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:10px;">
+    <div class="container">
+      <span class="eyebrow" data-reveal>Book a consultation</span>
+      <h1 class="mt-0" style="max-width:720px;"><span class="kinetic">Tell us what you're trying to measure</span></h1>
+      <p class="lede" data-reveal>Fill in a few details and we'll follow up to schedule a free 15-minute call. There's no obligation, and if it's not a good fit, we'll tell you honestly.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:10px;">
+    <div class="container">
+      <div class="grid-2" style="align-items:start;">
+
+        <!-- FORM -->
+        <div class="card" data-reveal style="grid-column: span 1;">
+          <h3 style="margin-bottom:18px;">Your request</h3>
+          <form class="form-grid" onsubmit="return false;">
+            <div>
+              <label>Full name <span class="req">*</span></label>
+              <input type="text" required>
+            </div>
+            <div>
+              <label>Work email <span class="req">*</span></label>
+              <input type="email" required>
+            </div>
+            <div>
+              <label>Institution / company <span class="req">*</span></label>
+              <input type="text" required>
+            </div>
+            <div>
+              <label>Role <span class="req">*</span></label>
+              <select required>
+                <option value="">Select…</option>
+                <option>Principal Investigator</option>
+                <option>Postdoctoral researcher</option>
+                <option>PhD student</option>
+                <option>Core facility staff</option>
+                <option>Industry R&amp;D</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label>Organisation type <span class="req">*</span></label>
+              <select required>
+                <option value="">Select…</option>
+                <option>University</option>
+                <option>Research institute</option>
+                <option>Hospital</option>
+                <option>Biotech / pharma</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label>Country <span class="req">*</span></label>
+              <input type="text" required>
+            </div>
+            <div class="full">
+              <label>What are you trying to measure? <span class="req">*</span></label>
+              <textarea required placeholder="e.g. counting nuclei across a multi-well experiment, normalising qPCR plates, detecting events in long recordings…"></textarea>
+            </div>
+            <div>
+              <label>What kind of data? <span class="req">*</span></label>
+              <select required>
+                <option value="">Select…</option>
+                <option>Microscopy / images</option>
+                <option>Flow cytometry</option>
+                <option>Plate assays (qPCR, ELISA, plate reader)</option>
+                <option>Behaviour / movement tracking</option>
+                <option>Electrophysiology / time series</option>
+                <option>Ecology / field data</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div>
+              <label>Instrument and file format</label>
+              <input type="text" placeholder="e.g. Zeiss .czi, FACSDiva .fcs, BioTek .xlsx, .abf, .csv">
+            </div>
+            <div>
+              <label>Roughly how much data per experiment? <span class="req">*</span></label>
+              <select required>
+                <option value="">Select…</option>
+                <option>Fewer than 50 files / samples</option>
+                <option>50–500 files / samples</option>
+                <option>500–5,000 files / samples</option>
+                <option>More than 5,000 files / samples</option>
+              </select>
+            </div>
+            <div>
+              <label>When do you need this?  <span class="req">*</span></label>
+              <select required>
+                <option value="">Select…</option>
+                <option>As soon as possible</option>
+                <option>Within a month</option>
+                <option>Within 3 months</option>
+                <option>Just exploring options</option>
+              </select>
+            </div>
+            <div class="full">
+              <label>How do you handle this today?</label>
+              <textarea placeholder="e.g. manual counting in Fiji, an existing macro, a lab member's script…"></textarea>
+            </div>
+            <div>
+              <label>Approximate budget available <span class="req">*</span></label>
+              <select required>
+                <option value="">Select…</option>
+                <option>Not yet known</option>
+                <option>Under €500</option>
+                <option>€500–2,000</option>
+                <option>€2,000–5,000</option>
+                <option>Over €5,000</option>
+                <option>Grant-dependent</option>
+              </select>
+            </div>
+            <div>
+              <label>Operating system</label>
+              <select>
+                <option value="">Select…</option>
+                <option>Windows</option>
+                <option>macOS</option>
+                <option>Linux</option>
+                <option>Mixed / not sure</option>
+              </select>
+            </div>
+            <div class="full">
+              <label>Anything else we should know?</label>
+              <textarea></textarea>
+            </div>
+            <div class="full consent-row">
+              <input type="checkbox" required>
+              <label style="margin:0; font-weight:400;">I agree to the <a href="privacy.html">Privacy Policy</a> and consent to being contacted about this request. <span class="req">*</span></label>
+            </div>
+            <div class="full consent-row">
+              <input type="checkbox">
+              <label style="margin:0; font-weight:400;">I'd also like to receive occasional emails about MAX Data Analysis (optional).</label>
+            </div>
+            <div class="full">
+              <button class="btn btn-primary btn-lg" type="submit" style="width:100%; justify-content:center;">Submit and request a call</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- BOOKING BLOCKER -->
+        <div>
+          <div class="blocker-box" data-reveal>
+            <span class="tag">Reserved for scheduling integration</span>
+            <h3>Calendar booking goes here</h3>
+            <p class="small">This space is reserved for a live scheduler (planned: HubSpot Meetings) so visitors can pick a slot immediately after submitting the form above, without a back-and-forth email. Not connected yet — for now, submissions are followed up by email within one business day.</p>
+          </div>
+          <div class="card" data-reveal style="margin-top:18px;">
+            <h3>What happens after you submit</h3>
+            <ul style="padding-left:20px; margin:0;">
+              <li>We review your request, usually within one business day</li>
+              <li>We reply to schedule a free 15-minute call</li>
+              <li>On the call, we confirm feasibility and next steps</li>
+              <li>If it's a fit, you receive a written, fixed-scope quote afterward</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="color:var(--ink);"><span class="logo-mark"></span>MAX Data Analysis</a>
+        <p class="small" style="margin-top:12px; max-width:320px;">Custom analysis tools for life-science researchers. Built for your experiment. Runs on your computer. Priced for a research budget.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="how-it-works.html">How it works</a>
+        <a href="examples.html">Examples</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="book.html">Book a consultation</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="cookies.html">Cookie policy</a>
+        <a href="terms.html">Terms of service</a>
+        <a href="license.html">Software licence</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <div>© 2026 MAX Data Analysis. All rights reserved.</div>
+        <div class="legal-note">[REGISTERED ENTITY NAME AND ADDRESS — TO BE ADDED BEFORE LAUNCH]</div>
+      </div>
+      <div><a href="mailto:hello@maxdataanalysis.com">hello@maxdataanalysis.com</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
