@@ -596,8 +596,15 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 52px 0 30px; 
    card row gets everything left over. min-height:0 on the flex child is
    required or the cards refuse to shrink and get clipped. */
 .hscroll-inner {
-  position: sticky; top: var(--hh); height: calc(100vh - var(--hh));
-  min-height: 520px;
+  position: sticky; top: var(--hh);
+  height: calc(100vh - var(--hh));
+  height: calc(100dvh - var(--hh));
+  /* Floor the panel at 520px on tall windows for readability, but never force
+     it taller than the window itself — that was pushing card content past
+     the bottom edge on short / fullscreen browser windows. */
+  min-height: 460px;
+  max-height: calc(100vh - var(--hh));
+  max-height: calc(100dvh - var(--hh));
   display: flex; flex-direction: column;
   overflow: hidden; padding: 26px 0 22px;
 }
@@ -629,14 +636,14 @@ footer.site-footer { border-top: 1px solid var(--border); padding: 52px 0 30px; 
 .hscroll .niche-list li::before { top: 11px; }
 
 /* short viewports: trim further so nothing is ever cut */
-@media (min-width: 901px) and (max-height: 820px) {
+@media (min-width: 901px) and (max-height: 860px) {
   .hscroll-head p { display: none; }
   .hscroll-head { margin-bottom: 14px; }
   .hscroll .niche .viz { flex-basis: 32%; }
   .hscroll .niche-list li:nth-child(n+4) { display: none; }
   .hscroll-note { display: none; }
 }
-@media (min-width: 901px) and (max-height: 700px) {
+@media (min-width: 901px) and (max-height: 760px) {
   .hscroll .niche-list li:nth-child(n+3) { display: none; }
   /* hide the description, never the trailing CTA paragraph */
   .hscroll .niche-body > p:not(:last-child) { display: none; }
