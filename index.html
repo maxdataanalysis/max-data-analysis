@@ -6,7 +6,8 @@
 <title>MAX Data Analysis, custom analysis tools for researchers, priced for research budgets</title>
 <meta name="description" content="Stuck with data to analyse? We build a tool that does exactly your analysis, imaging, cytometry, plate assays, tracking, signals, field data and more. Runs on your computer. Book a free 15-minute consultation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -28,30 +29,55 @@
 <main>
 
   <!-- HERO -->
-  <section class="hero hero-aurora">
+  <section class="hero">
     <div class="container">
+
+      <div class="live-strip" data-reveal>
+        <span class="ls-dot"></span>
+        <span class="ls-label">Live channel</span>
+        <span class="ls-track">
+          <span class="ls-items">
+            <span>IMG <b>Microscopy</b></span>
+            <span>CYT <b>Flow cytometry</b></span>
+            <span>PLT <b>Plate assays</b></span>
+            <span>TRK <b>Behaviour tracking</b></span>
+            <span>SIG <b>Electrophysiology</b></span>
+            <span>ECO <b>Field data</b></span>
+            <span>IMG <b>Microscopy</b></span>
+            <span>CYT <b>Flow cytometry</b></span>
+            <span>PLT <b>Plate assays</b></span>
+            <span>TRK <b>Behaviour tracking</b></span>
+            <span>SIG <b>Electrophysiology</b></span>
+            <span>ECO <b>Field data</b></span>
+          </span>
+        </span>
+        <span class="ls-badge">6 domains</span>
+      </div>
+
       <div class="hero-grid">
         <div>
-          <span class="eyebrow" data-reveal>For researchers without a data analyst</span>
+          <span class="eyebrow" data-reveal style="--d:40ms">For researchers without a data analyst</span>
           <h1 class="mt-0"><span class="kinetic">Stuck with data to analyse?</span></h1>
-          <p class="lede" data-reveal style="--d:100ms">Your experiment worked. Now the analysis is the bottleneck, no analyst in the group, no tool that fits your data, and no budget for a full software project.</p>
-          <p class="lede" data-reveal style="--d:160ms"><strong>We build you a tool that does exactly your analysis.</strong> It runs on your own computer, it's yours to keep, and it's priced for a research budget.</p>
-          <div class="hero-actions" data-reveal style="--d:240ms">
+          <p class="lede" data-reveal style="--d:140ms">Your experiment worked. Now the analysis is the bottleneck, no analyst in the group, no tool that fits your data, and no budget for a full software project.</p>
+          <p class="lede" data-reveal style="--d:220ms"><strong>We build you a tool that does exactly your analysis.</strong> It runs on your own computer, it's yours to keep, and it's priced for a research budget.</p>
+          <div class="hero-actions" data-reveal style="--d:300ms">
             <a href="contact.html" class="btn btn-primary btn-lg">Book a free 15-minute consultation</a>
             <a href="contact.html" class="btn btn-ghost btn-lg">Request more info</a>
           </div>
-          <p class="hero-note" data-reveal style="--d:300ms">No obligation. We'll tell you honestly if it's not a good fit for your data.</p>
+          <p class="hero-note" data-reveal style="--d:360ms">No obligation. We'll tell you honestly if it's not a good fit for your data.</p>
         </div>
-        <div data-reveal style="--d:180ms">
+        <div data-reveal style="--d:240ms">
           <div class="scope" data-scope>
             <canvas></canvas>
             <span class="scope-badge">Illustrative</span>
+            <span class="scope-corner tr"></span>
+            <span class="scope-corner bl"></span>
             <div class="scope-hud">
               <div>
                 <span class="scope-label">Objects detected</span>
                 <span class="scope-count" data-scope-count>0</span>
               </div>
-              <div class="scope-label">Batch running…</div>
+              <div class="scope-label">Batch running&hellip;</div>
             </div>
           </div>
           <p class="scope-caption">Simulated visualisation, not real experimental data.</p>
@@ -73,7 +99,7 @@
       <div class="hscroll-viewport">
         <div class="hscroll-track">
 
-          <article class="hscroll-item niche n-imaging">
+          <article class="hscroll-item niche">
             <div class="viz" data-viz="microscopy" data-seed="1101" data-mode="analysed"></div>
             <div class="niche-body">
               <span class="niche-chip">Imaging</span>
@@ -88,7 +114,7 @@
             </div>
           </article>
 
-          <article class="hscroll-item niche n-cyto">
+          <article class="hscroll-item niche">
             <div class="viz" data-viz="cytometry" data-seed="2202" data-mode="analysed"></div>
             <div class="niche-body">
               <span class="niche-chip">Cytometry</span>
@@ -103,7 +129,7 @@
             </div>
           </article>
 
-          <article class="hscroll-item niche n-plate">
+          <article class="hscroll-item niche">
             <div class="viz" data-viz="plate" data-seed="3303" data-mode="analysed"></div>
             <div class="niche-body">
               <span class="niche-chip">Plate assays</span>
@@ -118,7 +144,7 @@
             </div>
           </article>
 
-          <article class="hscroll-item niche n-track">
+          <article class="hscroll-item niche">
             <div class="viz" data-viz="tracking" data-seed="4404" data-mode="analysed"></div>
             <div class="niche-body">
               <span class="niche-chip">Behaviour</span>
@@ -133,7 +159,7 @@
             </div>
           </article>
 
-          <article class="hscroll-item niche n-signal">
+          <article class="hscroll-item niche">
             <div class="viz" data-viz="signal" data-seed="5505" data-mode="analysed"></div>
             <div class="niche-body">
               <span class="niche-chip">Signals</span>
@@ -148,7 +174,7 @@
             </div>
           </article>
 
-          <article class="hscroll-item niche n-eco">
+          <article class="hscroll-item niche">
             <div class="viz" data-viz="ecology" data-seed="6606" data-mode="analysed"></div>
             <div class="niche-body">
               <span class="niche-chip">Field data</span>
@@ -202,16 +228,16 @@
       <div class="vtl">
         <div class="vtl-rail"><span></span></div>
 
-        <div class="vtl-step vtl-1">
+        <div class="vtl-step">
           <div class="vtl-dot">01</div>
           <div class="vtl-card">
-            <span class="vtl-when">Day 0 · 15 minutes</span>
+            <span class="vtl-when">Day 0 &middot; 15 minutes</span>
             <h3>Free consultation</h3>
             <p>You describe what you need to measure and show a few sample files if you have them. We tell you honestly whether it's feasible, and if it isn't, we say so on the call rather than after an invoice.</p>
           </div>
         </div>
 
-        <div class="vtl-step vtl-2">
+        <div class="vtl-step">
           <div class="vtl-dot">02</div>
           <div class="vtl-card">
             <span class="vtl-when">Within a few days</span>
@@ -220,7 +246,7 @@
           </div>
         </div>
 
-        <div class="vtl-step vtl-3">
+        <div class="vtl-step">
           <div class="vtl-dot">03</div>
           <div class="vtl-card">
             <span class="vtl-when">Days to a few weeks</span>
@@ -229,7 +255,7 @@
           </div>
         </div>
 
-        <div class="vtl-step vtl-4">
+        <div class="vtl-step">
           <div class="vtl-dot">04</div>
           <div class="vtl-card">
             <span class="vtl-when">Delivery day</span>
@@ -238,7 +264,7 @@
           </div>
         </div>
 
-        <div class="vtl-step vtl-5">
+        <div class="vtl-step">
           <div class="vtl-dot">05</div>
           <div class="vtl-card">
             <span class="vtl-when">After delivery</span>
@@ -248,7 +274,7 @@
         </div>
       </div>
 
-      <p class="center" style="margin-top:40px;" data-reveal>
+      <p class="center" style="margin-top:44px;" data-reveal>
         <a href="book.html" class="btn btn-primary btn-lg">Start with a free consultation</a>
         <a href="how-it-works.html" class="btn btn-ghost btn-lg">Read the full process</a>
       </p>
@@ -269,25 +295,25 @@
           <div class="wheel-ring"></div>
           <span class="wheel-hint">Scroll or drag to turn</span>
 
-          <div class="wheel-node" tabindex="0" style="--node-c:#3D7DFF" data-color="#3D7DFF" data-tag="Detection" data-title="Counting &amp; detection"
+          <div class="wheel-node" tabindex="0" style="--node-c:#2F5CFF" data-color="#2F5CFF" data-tag="Detection" data-title="Counting &amp; detection"
                data-desc="Finding and counting objects, cells, colonies, particles, events, using the same criteria on every image or recording, so the numbers don't shift depending on who ran the analysis.">Counting</div>
 
-          <div class="wheel-node" tabindex="0" style="--node-c:#8B5CF6" data-color="#8B5CF6" data-tag="Segmentation" data-title="Segmentation &amp; outlining"
+          <div class="wheel-node" tabindex="0" style="--node-c:#9B8CFF" data-color="#9B8CFF" data-tag="Segmentation" data-title="Segmentation &amp; outlining"
                data-desc="Separating objects from background and from each other, including touching or overlapping ones, so each can be measured individually rather than as a single blob.">Segmenting</div>
 
-          <div class="wheel-node" tabindex="0" style="--node-c:#F0499B" data-color="#F0499B" data-tag="Measurement" data-title="Measurement &amp; morphometry"
+          <div class="wheel-node" tabindex="0" style="--node-c:#FF6FB0" data-color="#FF6FB0" data-tag="Measurement" data-title="Measurement &amp; morphometry"
                data-desc="Extracting size, shape, intensity and spatial features per object, exported as a structured table you can take straight into your own statistics.">Measuring</div>
 
-          <div class="wheel-node" tabindex="0" style="--node-c:#B8791A" data-color="#B8791A" data-tag="Normalisation" data-title="Normalisation &amp; curve fitting"
+          <div class="wheel-node" tabindex="0" style="--node-c:#C6862A" data-color="#C6862A" data-tag="Normalisation" data-title="Normalisation &amp; curve fitting"
                data-desc="Applying controls, correcting between plates or sessions, and fitting standard or dose–response curves, the steps that make results comparable across an experiment.">Normalising</div>
 
-          <div class="wheel-node" tabindex="0" style="--node-c:#0E9BB5" data-color="#0E9BB5" data-tag="Batch" data-title="Batch processing"
+          <div class="wheel-node" tabindex="0" style="--node-c:#1FA6BD" data-color="#1FA6BD" data-tag="Batch" data-title="Batch processing"
                data-desc="Running the whole pipeline across hundreds or thousands of files in one go, unattended, with a log of what was processed and what failed.">Batching</div>
 
-          <div class="wheel-node" tabindex="0" style="--node-c:#159C69" data-color="#159C69" data-tag="Cleaning" data-title="Data cleaning &amp; merging"
+          <div class="wheel-node" tabindex="0" style="--node-c:#0FB37F" data-color="#0FB37F" data-tag="Cleaning" data-title="Data cleaning &amp; merging"
                data-desc="Taking inconsistent exports, mismatched naming and scattered files, and turning them into one clean dataset with validation rules that catch problems early.">Cleaning</div>
 
-          <div class="wheel-node" tabindex="0" style="--node-c:#2A5FD9" data-color="#2A5FD9" data-tag="Quality" data-title="Quality control"
+          <div class="wheel-node" tabindex="0" style="--node-c:#1E42D6" data-color="#1E42D6" data-tag="Quality" data-title="Quality control"
                data-desc="Automatic flags for out-of-range values, failed controls, bad wells or corrupted files, so problems surface before they reach a figure.">Checking</div>
 
           <div class="wheel-node" tabindex="0" style="--node-c:#C4407F" data-color="#C4407F" data-tag="Output" data-title="Figures &amp; exports"
@@ -299,8 +325,8 @@
           <h3 class="wp-title" data-wheel-title>Counting &amp; detection</h3>
           <p class="wp-desc" data-wheel-desc>Finding and counting objects, cells, colonies, particles, events, using the same criteria on every image or recording, so the numbers don't shift depending on who ran the analysis.</p>
           <div class="wheel-nav">
-            <button class="carousel-btn" data-wheel-prev aria-label="Previous capability">‹</button>
-            <button class="carousel-btn" data-wheel-next aria-label="Next capability">›</button>
+            <button class="carousel-btn" data-wheel-prev aria-label="Previous capability">&lsaquo;</button>
+            <button class="carousel-btn" data-wheel-next aria-label="Next capability">&rsaquo;</button>
             <span class="wheel-count" data-wheel-count>1 / 8</span>
           </div>
           <div class="pill-row">
@@ -329,16 +355,16 @@
             <canvas class="before"></canvas>
             <div class="after-wrap"><canvas class="after"></canvas></div>
             <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
-            <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+            <div class="ba-handle"></div><div class="ba-knob">&#8646;</div>
           </div>
           <p class="viz-cap">Microscopy, segmentation and counting. Illustrative.</p>
         </div>
-        <div data-reveal style="--d:120ms">
+        <div data-reveal style="--d:100ms">
           <div class="ba" data-ba data-type="cytometry" data-seed="8842">
             <canvas class="before"></canvas>
             <div class="after-wrap"><canvas class="after"></canvas></div>
             <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
-            <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+            <div class="ba-handle"></div><div class="ba-knob">&#8646;</div>
           </div>
           <p class="viz-cap">Flow cytometry, gating and population statistics. Illustrative.</p>
         </div>
@@ -347,21 +373,21 @@
             <canvas class="before"></canvas>
             <div class="after-wrap"><canvas class="after"></canvas></div>
             <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
-            <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+            <div class="ba-handle"></div><div class="ba-knob">&#8646;</div>
           </div>
           <p class="viz-cap">Electrophysiology, event detection across channels. Illustrative.</p>
         </div>
-        <div data-reveal style="--d:120ms">
+        <div data-reveal style="--d:100ms">
           <div class="ba" data-ba data-type="tracking" data-seed="1264">
             <canvas class="before"></canvas>
             <div class="after-wrap"><canvas class="after"></canvas></div>
             <span class="ba-tag l">Raw</span><span class="ba-tag r">Analysed</span>
-            <div class="ba-handle"></div><div class="ba-knob">⇄</div>
+            <div class="ba-handle"></div><div class="ba-knob">&#8646;</div>
           </div>
           <p class="viz-cap">Behaviour tracking, trajectory and zone metrics. Illustrative.</p>
         </div>
       </div>
-      <p class="center" style="margin-top:28px;" data-reveal><a href="examples.html" class="btn btn-ghost">See all worked examples</a></p>
+      <p class="center" style="margin-top:30px;" data-reveal><a href="examples.html" class="btn btn-ghost">See all worked examples</a></p>
     </div>
   </section>
 
@@ -374,23 +400,23 @@
         <p data-reveal>We're not cheap by cutting corners, we're cheaper because of how the work is scoped. Three specific reasons:</p>
       </div>
       <div class="cost-grid">
-        <div class="cost-card cc-b1" data-reveal>
+        <div class="cost-card" data-reveal>
           <span class="cc-num">01</span>
           <h3>We build on proven open-source engines</h3>
           <p>We don't write analysis from scratch. We assemble and configure established, widely-used scientific libraries, so you're paying for the configuration and packaging, not for reinventing methods the field already trusts.</p>
         </div>
-        <div class="cost-card cc-b2" data-reveal style="--d:100ms">
+        <div class="cost-card" data-reveal style="--d:100ms">
           <span class="cc-num">02</span>
           <h3>Small, fixed scope</h3>
           <p>One tool, one job, agreed in writing before work starts. No open-ended engagements, no discovery phase billed by the month, no scope creep priced back to you.</p>
         </div>
-        <div class="cost-card cc-b3" data-reveal style="--d:200ms">
+        <div class="cost-card" data-reveal style="--d:200ms">
           <span class="cc-num">03</span>
           <h3>No platform to pay for</h3>
           <p>The tool runs on computers you already own. There's no per-seat licence, no annual subscription, and no cloud storage bill attached to your data.</p>
         </div>
       </div>
-      <p class="small center" style="margin-top:26px;" data-reveal>Every project is quoted individually after a free consultation, so you see the number before committing to anything.</p>
+      <p class="small center" style="margin-top:28px;" data-reveal>Every project is quoted individually after a free consultation, so you see the number before committing to anything.</p>
     </div>
   </section>
 
@@ -400,48 +426,48 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow" data-reveal>Fit</span>
-        <h2><span class="kinetic">This is built for you if…</span></h2>
+        <h2><span class="kinetic">This is built for you if&hellip;</span></h2>
         <p data-reveal>Most of the researchers we work with recognise themselves in at least three of these.</p>
       </div>
 
       <div class="fit-cards">
         <div class="fit-card" data-reveal>
-          <div class="fit-ico">✎</div>
+          <div class="fit-ico">&#9998;</div>
           <div>
             <h3>You're doing it by hand</h3>
             <p>An analysis that a computer should be doing is eating hours that belong to your actual research.</p>
           </div>
         </div>
         <div class="fit-card" data-reveal style="--d:70ms">
-          <div class="fit-ico">↻</div>
+          <div class="fit-ico">&#8635;</div>
           <div>
             <h3>It happens again and again</h3>
             <p>A recurring need, not a one-off, so the tool keeps paying back long after it's delivered.</p>
           </div>
         </div>
         <div class="fit-card" data-reveal style="--d:140ms">
-          <div class="fit-ico">✓</div>
+          <div class="fit-ico">&#10003;</div>
           <div>
             <h3>Results have to be reproducible</h3>
             <p>You need the same input to give the same answer months later, whoever runs it, for reviewers or for your own confidence.</p>
           </div>
         </div>
         <div class="fit-card" data-reveal style="--d:210ms">
-          <div class="fit-ico">⌂</div>
+          <div class="fit-ico">&#8962;</div>
           <div>
             <h3>Your data has to stay in-house</h3>
             <p>Confidential or unpublished work that can't be uploaded to a cloud platform. Everything we deliver runs locally.</p>
           </div>
         </div>
         <div class="fit-card" data-reveal style="--d:280ms">
-          <div class="fit-ico">⚙</div>
+          <div class="fit-ico">&#9881;</div>
           <div>
             <h3>You run a core facility</h3>
             <p>The same request keeps arriving from different users, and standardising it would free up real capacity.</p>
           </div>
         </div>
         <div class="fit-card" data-reveal style="--d:350ms">
-          <div class="fit-ico">€</div>
+          <div class="fit-ico">&euro;</div>
           <div>
             <h3>You have a budget, not a big one</h3>
             <p>You've priced custom software before and the number didn't fit the grant, but the problem hasn't gone away.</p>
@@ -449,7 +475,7 @@
         </div>
       </div>
 
-      <p class="center" style="margin-top:34px;" data-reveal>
+      <p class="center" style="margin-top:36px;" data-reveal>
         <a href="contact.html" class="btn btn-primary btn-lg">Book a free 15-minute consultation</a>
       </p>
     </div>
@@ -482,39 +508,39 @@
 
       <div class="pain-list" data-pain>
         <button type="button" class="pain-item" data-reveal>
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>Your PhD student is spending more time scoring data than running experiments</span>
         </button>
         <button type="button" class="pain-item" data-reveal style="--d:50ms">
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>The paper is written, but the figures are waiting on an analysis nobody has time to finish</span>
         </button>
         <button type="button" class="pain-item" data-reveal style="--d:100ms">
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>A reviewer asked you to reanalyse, and reproducing the original numbers is harder than it should be</span>
         </button>
         <button type="button" class="pain-item" data-reveal style="--d:150ms">
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>The person who wrote your lab's analysis script finished their contract and left</span>
         </button>
         <button type="button" class="pain-item" data-reveal style="--d:200ms">
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>Every instrument exports a different format, and stitching them together is a manual job each time</span>
         </button>
         <button type="button" class="pain-item" data-reveal style="--d:250ms">
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>Two people analysing the same samples get results that don't quite agree</span>
         </button>
         <button type="button" class="pain-item" data-reveal style="--d:300ms">
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>Your grant covers consumables and reagents, but there's no line for a bioinformatician</span>
         </button>
         <button type="button" class="pain-item" data-reveal style="--d:350ms">
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>You've put off a whole analysis because setting it up would take longer than doing it by hand, once</span>
         </button>
         <button type="button" class="pain-item" data-reveal style="--d:400ms">
-          <span class="pain-box">✓</span>
+          <span class="pain-box">&#10003;</span>
           <span>The same request comes to your core facility from a different user every few weeks</span>
         </button>
       </div>
@@ -552,8 +578,8 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="logo" style="color:var(--ink);"><span class="logo-mark"></span>MAX Data Analysis</a>
-        <p class="small" style="margin-top:12px; max-width:340px;">Custom analysis tools for life-science researchers. Built for your experiment. Runs on your computer. Priced for a research budget.</p>
+        <a href="index.html" class="logo"><span class="logo-mark"></span>MAX Data Analysis</a>
+        <p class="small" style="margin-top:12px; max-width:340px; color:rgba(244,245,243,0.5);">Custom analysis tools for life-science researchers. Built for your experiment. Runs on your computer. Priced for a research budget.</p>
       </div>
       <div>
         <h4>Site</h4>
@@ -573,7 +599,7 @@
     </div>
     <div class="footer-bottom">
       <div>
-        <div>© 2026 MAX Data Analysis. All rights reserved.</div>
+        <div>&copy; 2026 MAX Data Analysis. All rights reserved.</div>
         <div class="legal-note">[REGISTERED ENTITY NAME AND ADDRESS, TO BE ADDED BEFORE LAUNCH]</div>
       </div>
       <div><a href="mailto:hello@maxdataanalysis.com">hello@maxdataanalysis.com</a></div>

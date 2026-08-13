@@ -12,9 +12,10 @@
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var C = {
-    dapi: "#3D7DFF", fitc: "#24C98A", tritc: "#F0499B",
-    amber: "#FFB020", violet: "#8B5CF6", cyan: "#22D3EE"
+    signal: "#5C82FF", live: "#21E6A1", amber: "#FFB454",
+    violet: "#9B8CFF", magenta: "#FF6FB0", cyan: "#4FD8E8"
   };
+  var MONO = "JetBrains Mono, monospace";
 
   /* ---------- seeded RNG so before/after always match ---------- */
   function rng(seed) {
@@ -28,12 +29,12 @@
 
   function field(ctx, w, h, seed, tintA, tintB) {
     var g = ctx.createLinearGradient(0, 0, w, h);
-    g.addColorStop(0, "#050912"); g.addColorStop(1, "#0B1226");
+    g.addColorStop(0, "#0B0E13"); g.addColorStop(1, "#131924");
     ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
     var r = rng(seed + 991);
     ctx.globalAlpha = 0.5;
     for (var i = 0; i < Math.round(w * h / 900); i++) {
-      ctx.fillStyle = r() > 0.5 ? (tintA || "rgba(61,125,255,0.16)") : (tintB || "rgba(36,201,138,0.11)");
+      ctx.fillStyle = r() > 0.5 ? (tintA || "rgba(92,130,255,0.14)") : (tintB || "rgba(33,230,161,0.10)");
       ctx.beginPath(); ctx.arc(r() * w, r() * h, r() * 1.5, 0, 6.284); ctx.fill();
     }
     ctx.globalAlpha = 1;
@@ -43,18 +44,18 @@
     return "rgba(" + ((n >> 16) & 255) + "," + ((n >> 8) & 255) + "," + (n & 255) + "," + a + ")";
   }
   function badge(ctx, w, h, label, value, color) {
-    var bw = 132, bh = 50;
+    var bw = 136, bh = 48;
     ctx.save();
-    ctx.fillStyle = "rgba(5,9,18,0.74)";
+    ctx.fillStyle = "rgba(9,11,15,0.78)";
     ctx.fillRect(w - bw - 12, h - bh - 12, bw, bh);
     ctx.strokeStyle = hexA(color, 0.5);
     ctx.strokeRect(w - bw - 12, h - bh - 12, bw, bh);
-    ctx.fillStyle = "rgba(255,255,255,0.55)";
-    ctx.font = "600 8px Inter, sans-serif";
+    ctx.fillStyle = "rgba(244,245,243,0.5)";
+    ctx.font = "500 8px " + MONO;
     ctx.fillText(label, w - bw - 4, h - bh + 4);
     ctx.fillStyle = color;
-    ctx.font = "600 22px Fraunces, Georgia, serif";
-    ctx.fillText(value, w - bw - 4, h - 22);
+    ctx.font = "600 21px " + MONO;
+    ctx.fillText(value, w - bw - 4, h - 21);
     ctx.restore();
   }
 
@@ -81,32 +82,31 @@
       ctx.save(); ctx.translate(c.x, c.y); ctx.rotate(c.rot); ctx.scale(1, c.sq);
       var a = c.b * (on ? 0.55 : 1);
       var g = ctx.createRadialGradient(0, 0, c.r * 0.1, 0, 0, c.r);
-      g.addColorStop(0, "rgba(150,195,255," + 0.92 * a + ")");
-      g.addColorStop(0.45, "rgba(61,125,255," + 0.62 * a + ")");
-      g.addColorStop(1, "rgba(30,70,180,0)");
+      g.addColorStop(0, "rgba(170,190,255," + 0.92 * a + ")");
+      g.addColorStop(0.45, "rgba(92,130,255," + 0.62 * a + ")");
+      g.addColorStop(1, "rgba(40,60,150,0)");
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, c.r, 0, 6.284); ctx.fill(); ctx.restore();
     });
     if (on) {
       cells.forEach(function (c, i) {
         ctx.save(); ctx.translate(c.x, c.y); ctx.rotate(c.rot); ctx.scale(1, c.sq);
-        ctx.strokeStyle = C.fitc; ctx.lineWidth = 2;
-        ctx.shadowColor = hexA(C.fitc, 0.85); ctx.shadowBlur = 9;
+        ctx.strokeStyle = C.live; ctx.lineWidth = 2;
+        ctx.shadowColor = hexA(C.live, 0.85); ctx.shadowBlur = 9;
         ctx.beginPath(); ctx.arc(0, 0, c.r * 1.14, 0, 6.284); ctx.stroke(); ctx.restore();
-        ctx.fillStyle = "rgba(255,255,255,0.7)"; ctx.font = "600 9px Inter, sans-serif";
+        ctx.fillStyle = "rgba(244,245,243,0.7)"; ctx.font = "500 9px " + MONO;
         ctx.fillText(i + 1, c.x + c.r * 1.1, c.y - c.r * 0.9);
       });
-      badge(ctx, w, h, "OBJECTS DETECTED", String(cells.length), C.fitc);
+      badge(ctx, w, h, "OBJECTS DETECTED", String(cells.length), C.live);
     }
   };
 
   /* ---- 2. Flow cytometry ---- */
   VIS.cytometry = function (ctx, w, h, seed, on) {
-    field(ctx, w, h, seed, "rgba(139,92,246,0.14)", "rgba(34,211,238,0.10)");
+    field(ctx, w, h, seed, "rgba(155,140,255,0.14)", "rgba(79,216,232,0.10)");
     var pad = 34, pw = w - pad * 2, ph = h - pad * 2;
-    // axes
-    ctx.strokeStyle = "rgba(255,255,255,0.18)"; ctx.lineWidth = 1;
+    ctx.strokeStyle = "rgba(244,245,243,0.16)"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(pad, pad); ctx.lineTo(pad, pad + ph); ctx.lineTo(pad + pw, pad + ph); ctx.stroke();
-    ctx.fillStyle = "rgba(255,255,255,0.4)"; ctx.font = "600 8px Inter, sans-serif";
+    ctx.fillStyle = "rgba(244,245,243,0.38)"; ctx.font = "500 8px " + MONO;
     ctx.fillText("FSC-A", pad + pw - 34, pad + ph + 14);
     ctx.save(); ctx.translate(pad - 12, pad + 34); ctx.rotate(-Math.PI / 2); ctx.fillText("SSC-A", 0, 0); ctx.restore();
 
@@ -114,20 +114,19 @@
     var pops = [
       { cx: 0.32, cy: 0.62, sx: 0.09, sy: 0.10, n: 520, col: C.cyan, name: "Lymphocytes", pct: "41.2%" },
       { cx: 0.62, cy: 0.36, sx: 0.11, sy: 0.09, n: 380, col: C.violet, name: "Monocytes", pct: "28.7%" },
-      { cx: 0.78, cy: 0.72, sx: 0.07, sy: 0.07, n: 210, col: C.tritc, name: "Granulocytes", pct: "16.4%" }
+      { cx: 0.78, cy: 0.72, sx: 0.07, sy: 0.07, n: 210, col: C.magenta, name: "Granulocytes", pct: "16.4%" }
     ];
     pops.forEach(function (p) {
       for (var i = 0; i < p.n; i++) {
         var x = pad + (p.cx + gauss(r) * p.sx) * pw;
         var y = pad + (p.cy + gauss(r) * p.sy) * ph;
         if (x < pad || x > pad + pw || y < pad || y > pad + ph) continue;
-        ctx.fillStyle = on ? hexA(p.col, 0.75) : "rgba(180,200,235,0.42)";
+        ctx.fillStyle = on ? hexA(p.col, 0.75) : "rgba(190,200,230,0.4)";
         ctx.beginPath(); ctx.arc(x, y, 1.5, 0, 6.284); ctx.fill();
       }
     });
-    // debris
     for (var j = 0; j < 260; j++) {
-      ctx.fillStyle = "rgba(150,170,210,0.22)";
+      ctx.fillStyle = "rgba(160,170,200,0.2)";
       ctx.beginPath(); ctx.arc(pad + r() * pw, pad + r() * ph, 1.2, 0, 6.284); ctx.fill();
     }
     if (on) {
@@ -137,7 +136,7 @@
         ctx.beginPath();
         ctx.ellipse(pad + p.cx * pw, pad + p.cy * ph, p.sx * pw * 2.1, p.sy * ph * 2.1, 0, 0, 6.284);
         ctx.stroke(); ctx.setLineDash([]); ctx.shadowBlur = 0;
-        ctx.fillStyle = "#fff"; ctx.font = "600 9px Inter, sans-serif";
+        ctx.fillStyle = "#fff"; ctx.font = "500 9px " + MONO;
         ctx.fillText(p.name + "  " + p.pct, pad + p.cx * pw - 28, pad + p.cy * ph - p.sy * ph * 2.1 - 6);
       });
       badge(ctx, w, h, "GATES APPLIED", "3", C.violet);
@@ -146,7 +145,7 @@
 
   /* ---- 3. Plate-based assays ---- */
   VIS.plate = function (ctx, w, h, seed, on) {
-    field(ctx, w, h, seed, "rgba(255,176,32,0.12)", "rgba(61,125,255,0.10)");
+    field(ctx, w, h, seed, "rgba(255,180,84,0.12)", "rgba(92,130,255,0.10)");
     var cols = 12, rows = 8, pad = 30;
     var cw = (w - pad * 2) / cols, ch = Math.min((h - pad * 2 - 40) / rows, cw);
     var r = rng(seed);
@@ -160,19 +159,18 @@
       var v = vals[i];
       if (on) {
         var col = v < 0.5
-          ? "rgba(" + Math.round(61 + v * 2 * 0) + "," + Math.round(125 + v * 2 * 76) + "," + Math.round(255 - v * 2 * 117) + ",0.9)"
-          : "rgba(" + Math.round(36 + (v - 0.5) * 2 * 219) + "," + Math.round(201 - (v - 0.5) * 2 * 25) + "," + Math.round(138 - (v - 0.5) * 2 * 106) + ",0.9)";
+          ? "rgba(92," + Math.round(130 + v * 2 * 60) + "," + Math.round(255 - v * 2 * 40) + ",0.9)"
+          : "rgba(" + Math.round(33 + (v - 0.5) * 2 * 190) + ",230," + Math.round(161 - (v - 0.5) * 2 * 120) + ",0.9)";
         ctx.fillStyle = col;
       } else {
-        ctx.fillStyle = "rgba(170,190,225," + (0.20 + v * 0.30) + ")";
+        ctx.fillStyle = "rgba(180,190,220," + (0.20 + v * 0.30) + ")";
       }
       ctx.beginPath(); ctx.arc(cx, cy, Math.min(cw, ch) * 0.36, 0, 6.284); ctx.fill();
-      ctx.strokeStyle = "rgba(255,255,255,0.10)"; ctx.stroke();
+      ctx.strokeStyle = "rgba(244,245,243,0.08)"; ctx.stroke();
     }
     if (on) {
-      // fitted dose-response curve inset
       var gx = pad, gy = h - 52, gw = w - pad * 2 - 150, gh = 34;
-      ctx.strokeStyle = "rgba(255,255,255,0.2)";
+      ctx.strokeStyle = "rgba(244,245,243,0.18)";
       ctx.beginPath(); ctx.moveTo(gx, gy + gh); ctx.lineTo(gx + gw, gy + gh); ctx.stroke();
       ctx.strokeStyle = C.amber; ctx.lineWidth = 2;
       ctx.shadowColor = hexA(C.amber, 0.7); ctx.shadowBlur = 8;
@@ -183,7 +181,7 @@
         p === 0 ? ctx.moveTo(gx + p, py) : ctx.lineTo(gx + p, py);
       }
       ctx.stroke(); ctx.shadowBlur = 0;
-      ctx.fillStyle = "rgba(255,255,255,0.55)"; ctx.font = "600 8px Inter, sans-serif";
+      ctx.fillStyle = "rgba(244,245,243,0.5)"; ctx.font = "500 8px " + MONO;
       ctx.fillText("FITTED DOSE–RESPONSE", gx, gy - 4);
       badge(ctx, w, h, "PLATES NORMALISED", "96", C.amber);
     }
@@ -191,9 +189,9 @@
 
   /* ---- 4. Movement / behaviour tracking ---- */
   VIS.tracking = function (ctx, w, h, seed, on) {
-    field(ctx, w, h, seed, "rgba(240,73,155,0.12)", "rgba(139,92,246,0.10)");
+    field(ctx, w, h, seed, "rgba(255,111,176,0.12)", "rgba(155,140,255,0.10)");
     var pad = 26;
-    ctx.strokeStyle = "rgba(255,255,255,0.16)"; ctx.lineWidth = 1.4;
+    ctx.strokeStyle = "rgba(244,245,243,0.14)"; ctx.lineWidth = 1.4;
     ctx.strokeRect(pad, pad, w - pad * 2, h - pad * 2);
     var r = rng(seed), pts = [], x = w / 2, y = h / 2, vx = 0, vy = 0;
     for (var i = 0; i < 460; i++) {
@@ -205,32 +203,30 @@
     }
     if (!on) {
       pts.forEach(function (p) {
-        ctx.fillStyle = "rgba(180,200,235,0.35)";
+        ctx.fillStyle = "rgba(190,200,230,0.32)";
         ctx.beginPath(); ctx.arc(p.x, p.y, 1.4, 0, 6.284); ctx.fill();
       });
     } else {
-      // zone
-      ctx.strokeStyle = hexA(C.tritc, 0.55); ctx.setLineDash([5, 4]);
+      ctx.strokeStyle = hexA(C.magenta, 0.55); ctx.setLineDash([5, 4]);
       ctx.strokeRect(w * 0.55, h * 0.18, w * 0.32, h * 0.34); ctx.setLineDash([]);
-      ctx.fillStyle = hexA(C.tritc, 0.08); ctx.fillRect(w * 0.55, h * 0.18, w * 0.32, h * 0.34);
-      ctx.fillStyle = "rgba(255,255,255,0.6)"; ctx.font = "600 8px Inter, sans-serif";
+      ctx.fillStyle = hexA(C.magenta, 0.08); ctx.fillRect(w * 0.55, h * 0.18, w * 0.32, h * 0.34);
+      ctx.fillStyle = "rgba(244,245,243,0.55)"; ctx.font = "500 8px " + MONO;
       ctx.fillText("ZONE A", w * 0.55 + 5, h * 0.18 + 13);
-      // trail with velocity colour
       for (var k = 1; k < pts.length; k++) {
         var sp = Math.hypot(pts[k].x - pts[k - 1].x, pts[k].y - pts[k - 1].y);
-        ctx.strokeStyle = sp > 3 ? hexA(C.tritc, 0.85) : hexA(C.violet, 0.6);
+        ctx.strokeStyle = sp > 3 ? hexA(C.magenta, 0.85) : hexA(C.violet, 0.6);
         ctx.lineWidth = 1.8; ctx.beginPath();
         ctx.moveTo(pts[k - 1].x, pts[k - 1].y); ctx.lineTo(pts[k].x, pts[k].y); ctx.stroke();
       }
-      ctx.fillStyle = C.fitc; ctx.beginPath();
+      ctx.fillStyle = C.live; ctx.beginPath();
       ctx.arc(pts[pts.length - 1].x, pts[pts.length - 1].y, 4, 0, 6.284); ctx.fill();
-      badge(ctx, w, h, "PATH LENGTH", "12.4 m", C.tritc);
+      badge(ctx, w, h, "PATH LENGTH", "12.4 m", C.magenta);
     }
   };
 
   /* ---- 5. Electrophysiology / time-series ---- */
   VIS.signal = function (ctx, w, h, seed, on) {
-    field(ctx, w, h, seed, "rgba(34,211,238,0.12)", "rgba(36,201,138,0.10)");
+    field(ctx, w, h, seed, "rgba(79,216,232,0.12)", "rgba(33,230,161,0.10)");
     var r = rng(seed), lanes = 4, pad = 24;
     var lh = (h - pad * 2) / lanes;
     var spikes = 0;
@@ -238,7 +234,7 @@
       var base = pad + lh * L + lh / 2;
       var evts = [];
       for (var e = 0; e < 5 + Math.floor(r() * 5); e++) evts.push(pad + r() * (w - pad * 2));
-      ctx.strokeStyle = on ? hexA(C.cyan, 0.9) : "rgba(180,200,235,0.5)";
+      ctx.strokeStyle = on ? hexA(C.cyan, 0.9) : "rgba(190,200,230,0.45)";
       ctx.lineWidth = 1.3; ctx.beginPath();
       for (var px = pad; px < w - pad; px++) {
         var v = (r() - 0.5) * 3.2;
@@ -253,25 +249,25 @@
       if (on) {
         evts.forEach(function (ex) {
           spikes++;
-          ctx.fillStyle = C.fitc;
+          ctx.fillStyle = C.live;
           ctx.beginPath();
           ctx.moveTo(ex + 2, base - lh * 0.44);
           ctx.lineTo(ex - 3, base - lh * 0.32);
           ctx.lineTo(ex + 7, base - lh * 0.32);
           ctx.closePath(); ctx.fill();
         });
-        ctx.fillStyle = "rgba(255,255,255,0.42)"; ctx.font = "600 8px Inter, sans-serif";
+        ctx.fillStyle = "rgba(244,245,243,0.4)"; ctx.font = "500 8px " + MONO;
         ctx.fillText("CH " + (L + 1), pad + 2, base - lh * 0.36);
       }
     }
-    if (on) badge(ctx, w, h, "EVENTS DETECTED", String(spikes), C.fitc);
+    if (on) badge(ctx, w, h, "EVENTS DETECTED", String(spikes), C.live);
   };
 
   /* ---- 6. Ecology / field data ---- */
   VIS.ecology = function (ctx, w, h, seed, on) {
-    field(ctx, w, h, seed, "rgba(36,201,138,0.14)", "rgba(255,176,32,0.10)");
+    field(ctx, w, h, seed, "rgba(33,230,161,0.14)", "rgba(255,180,84,0.10)");
     var pad = 34, pw = w - pad * 2, ph = h - pad * 2;
-    ctx.strokeStyle = "rgba(255,255,255,0.18)";
+    ctx.strokeStyle = "rgba(244,245,243,0.16)";
     ctx.beginPath(); ctx.moveTo(pad, pad); ctx.lineTo(pad, pad + ph); ctx.lineTo(pad + pw, pad + ph); ctx.stroke();
     var r = rng(seed), pts = [];
     for (var i = 0; i < 130; i++) {
@@ -280,7 +276,7 @@
       pts.push({ x: pad + t * pw, y: pad + ph - Math.max(0.02, Math.min(0.98, val)) * ph });
     }
     pts.forEach(function (p) {
-      ctx.fillStyle = on ? hexA(C.fitc, 0.7) : "rgba(180,200,235,0.4)";
+      ctx.fillStyle = on ? hexA(C.live, 0.7) : "rgba(190,200,230,0.38)";
       ctx.beginPath(); ctx.arc(p.x, p.y, 2.4, 0, 6.284); ctx.fill();
     });
     if (on) {
@@ -290,7 +286,6 @@
       ctx.moveTo(pad, pad + ph - 0.22 * ph);
       ctx.lineTo(pad + pw, pad + ph - 0.77 * ph);
       ctx.stroke(); ctx.shadowBlur = 0;
-      // confidence band
       ctx.fillStyle = hexA(C.amber, 0.12);
       ctx.beginPath();
       ctx.moveTo(pad, pad + ph - 0.14 * ph);
@@ -298,9 +293,9 @@
       ctx.lineTo(pad + pw, pad + ph - 0.85 * ph);
       ctx.lineTo(pad, pad + ph - 0.30 * ph);
       ctx.closePath(); ctx.fill();
-      ctx.fillStyle = "rgba(255,255,255,0.55)"; ctx.font = "600 8px Inter, sans-serif";
+      ctx.fillStyle = "rgba(244,245,243,0.5)"; ctx.font = "500 8px " + MONO;
       ctx.fillText("FITTED TREND + 95% BAND", pad + 4, pad + 12);
-      badge(ctx, w, h, "RECORDS CLEANED", "1,480", C.fitc);
+      badge(ctx, w, h, "RECORDS CLEANED", "1,480", C.live);
     }
   };
 
@@ -410,19 +405,19 @@
       var pulse = 1 + Math.sin(t * 0.0012 + c.ph) * 0.035;
       ctx.save(); ctx.translate(c.x, c.y); ctx.rotate(c.rot); ctx.scale(1, c.sq);
       var rad = c.r * pulse, g = ctx.createRadialGradient(0, 0, rad * 0.1, 0, 0, rad);
-      g.addColorStop(0, "rgba(150,195,255," + 0.92 * c.b + ")");
-      g.addColorStop(0.45, "rgba(61,125,255," + 0.62 * c.b + ")");
-      g.addColorStop(1, "rgba(30,70,180,0)");
+      g.addColorStop(0, "rgba(170,190,255," + 0.92 * c.b + ")");
+      g.addColorStop(0.45, "rgba(92,130,255," + 0.62 * c.b + ")");
+      g.addColorStop(1, "rgba(40,60,150,0)");
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, rad, 0, 6.284); ctx.fill(); ctx.restore();
     }
     function outline(c, p, label) {
       if (p <= 0) return;
       ctx.save(); ctx.translate(c.x, c.y); ctx.rotate(c.rot); ctx.scale(1, c.sq);
-      ctx.strokeStyle = hexA(C.fitc, Math.min(1, p)); ctx.lineWidth = 2;
-      ctx.shadowColor = hexA(C.fitc, 0.85); ctx.shadowBlur = 9;
+      ctx.strokeStyle = hexA(C.live, Math.min(1, p)); ctx.lineWidth = 2;
+      ctx.shadowColor = hexA(C.live, 0.85); ctx.shadowBlur = 9;
       ctx.beginPath(); ctx.arc(0, 0, c.r * 1.14, -1.5708, -1.5708 + 6.284 * Math.min(1, p)); ctx.stroke(); ctx.restore();
       if (label != null && p >= 1) {
-        ctx.fillStyle = "rgba(255,255,255,0.72)"; ctx.font = "600 9px Inter, sans-serif";
+        ctx.fillStyle = "rgba(244,245,243,0.72)"; ctx.font = "500 9px " + MONO;
         ctx.fillText(label, c.x + c.r * 1.1, c.y - c.r * 0.9);
       }
     }
@@ -450,9 +445,9 @@
       if (t > CYCLE * 0.08 && t < CYCLE * 0.72) {
         var sy = ((t - CYCLE * 0.08) / (CYCLE * 0.64)) * H;
         var lg = ctx.createLinearGradient(0, sy - 26, 0, sy + 26);
-        lg.addColorStop(0, "rgba(36,201,138,0)");
-        lg.addColorStop(0.5, "rgba(36,201,138,0.30)");
-        lg.addColorStop(1, "rgba(36,201,138,0)");
+        lg.addColorStop(0, "rgba(33,230,161,0)");
+        lg.addColorStop(0.5, "rgba(33,230,161,0.28)");
+        lg.addColorStop(1, "rgba(33,230,161,0)");
         ctx.fillStyle = lg; ctx.fillRect(0, sy - 26, W, 52);
       }
       if (countEl) countEl.textContent = det;
@@ -467,53 +462,6 @@
         });
       }, { threshold: 0.05 }).observe(wrap);
     }
-  }
-
-  /* =========================================================
-     HORIZONTAL CAROUSEL — drag, arrows, progress
-     ========================================================= */
-  function initCarousels() {
-    document.querySelectorAll("[data-carousel]").forEach(function (root) {
-      var track = root.querySelector(".carousel-track");
-      var prev = root.querySelector("[data-car-prev]");
-      var next = root.querySelector("[data-car-next]");
-      var bar = root.querySelector(".carousel-bar span");
-      if (!track) return;
-
-      function step() {
-        var first = track.querySelector(".carousel-item");
-        return first ? first.getBoundingClientRect().width + 22 : 340;
-      }
-      if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: REDUCED ? "auto" : "smooth" }); });
-      if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: REDUCED ? "auto" : "smooth" }); });
-
-      track.addEventListener("scroll", function () {
-        if (!bar) return;
-        var max = track.scrollWidth - track.clientWidth;
-        bar.style.width = (max > 0 ? (track.scrollLeft / max) * 100 : 100) + "%";
-        if (prev) prev.disabled = track.scrollLeft < 4;
-        if (next) next.disabled = track.scrollLeft >= max - 4;
-      }, { passive: true });
-
-      // pointer drag to scroll
-      var down = false, sx = 0, sl = 0, moved = false;
-      track.addEventListener("pointerdown", function (e) {
-        if (e.target.closest("a,button")) return;
-        down = true; moved = false; sx = e.clientX; sl = track.scrollLeft;
-        track.classList.add("dragging");
-      });
-      track.addEventListener("pointermove", function (e) {
-        if (!down) return;
-        var d = e.clientX - sx;
-        if (Math.abs(d) > 3) moved = true;
-        track.scrollLeft = sl - d;
-      });
-      ["pointerup", "pointercancel", "pointerleave"].forEach(function (ev) {
-        track.addEventListener(ev, function () { down = false; track.classList.remove("dragging"); });
-      });
-      track.addEventListener("click", function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
-      track.dispatchEvent(new Event("scroll"));
-    });
   }
 
   /* =========================================================
@@ -533,13 +481,12 @@
     if (!stage || !nodes.length) return;
 
     var n = nodes.length;
-    var STEP = 360 / n;          // angular spacing
-    var WINDOW = 55;             // ± degrees still visible → exactly 3 of 8 nodes
+    var STEP = 360 / n;
+    var WINDOW = 55;
     var scrollAngle = 0, dragAngle = 0, active = -1, moved = false;
 
     function total() { return scrollAngle + dragAngle; }
 
-    // signed smallest difference to the focus direction (0° = straight right)
     function delta(i) {
       var a = i * STEP + total();
       a = ((a + 180) % 360 + 360) % 360 - 180;
@@ -548,9 +495,7 @@
 
     function layout() {
       var rect = stage.getBoundingClientRect();
-      // Clamp the radius so the topmost and bottommost visible nodes stay
-      // inside the stage — otherwise a node can ride up over the sticky header.
-      var nodeR = (nodes[0].offsetWidth || 152) / 2;
+      var nodeR = (nodes[0].offsetWidth || 148) / 2;
       var maxByHeight = (rect.height / 2 - nodeR - 10) / Math.sin(WINDOW * Math.PI / 180);
       var R = Math.max(200, Math.min(rect.width * 0.95, maxByHeight));
       var cy = rect.height / 2;
@@ -596,8 +541,6 @@
       if (col) root.style.setProperty("--wheel-accent", col);
     }
 
-    // tween dragAngle toward a target so arrow clicks rotate the whole
-    // arc smoothly, in the direction the arrow points
     var targetDrag = null, raf = null;
     function tick() {
       if (targetDrag === null) { raf = null; return; }
@@ -617,11 +560,9 @@
       active = i;
       var want = -(i * STEP) - scrollAngle;
       if (dir) {
-        // force the rotation to travel in the requested direction
         while (dir > 0 && want > dragAngle) want -= 360;
         while (dir < 0 && want < dragAngle) want += 360;
       } else {
-        // otherwise take the shortest path
         while (want - dragAngle > 180) want -= 360;
         while (want - dragAngle < -180) want += 360;
       }
@@ -640,7 +581,6 @@
     if (prev) prev.addEventListener("click", function () { select((active < 0 ? nearestIndex() : active) - 1, -1); });
     if (next) next.addEventListener("click", function () { select((active < 0 ? nearestIndex() : active) + 1, +1); });
 
-    /* --- drag to turn --- */
     var down = false, startY = 0, startDrag = 0;
     stage.addEventListener("pointerdown", function (e) {
       if (e.target.closest("a,button")) return;
@@ -663,7 +603,6 @@
       setTimeout(function () { moved = false; }, 30);
     });
 
-    /* --- page scroll turns it too --- */
     if (!REDUCED) {
       var ticking = false;
       function onScroll() {
@@ -673,11 +612,9 @@
           var rect = root.getBoundingClientRect();
           var vh = window.innerHeight;
           if (rect.bottom > 0 && rect.top < vh) {
-            // progress of the section through the viewport, -1 .. 1
             var p = (vh / 2 - (rect.top + rect.height / 2)) / (vh / 2 + rect.height / 2);
             scrollAngle = p * STEP * 2.2;
-            if (active < 0) layout();
-            else layout();
+            layout();
           }
           ticking = false;
         });
@@ -819,16 +756,13 @@
       var inner = section.querySelector(".hscroll-inner");
       if (!inner) return;
 
-      // Defensive: any ancestor with overflow hidden/auto/scroll becomes the
-      // scroll container for a position:sticky child, which silently stops it
-      // pinning. Clear it on the way up so a future CSS change can't break this.
       for (var p = inner.parentElement; p && p !== document.body; p = p.parentElement) {
         var ov = window.getComputedStyle(p).overflow;
         if (ov && ov !== "visible" && ov !== "clip") p.style.overflow = "visible";
       }
 
       var mobile = function () { return window.matchMedia("(max-width: 900px)").matches; };
-      var distance = 0, headerH = 72, panelH = 0;
+      var distance = 0, headerH = 76, panelH = 0;
 
       function measure() {
         if (mobile() || REDUCED) {
@@ -838,14 +772,10 @@
           return;
         }
         var hdr = document.querySelector(".site-header");
-        headerH = hdr ? hdr.getBoundingClientRect().height : 72;
+        headerH = hdr ? hdr.getBoundingClientRect().height : 76;
         panelH = inner ? inner.getBoundingClientRect().height : (window.innerHeight - headerH);
 
-        // full width of the track minus what's already visible
         distance = Math.max(0, track.scrollWidth - viewport.clientWidth);
-
-        // the section must be tall enough to hold the panel on screen for
-        // the entire horizontal journey: one panel height + the travel
         section.style.height = (panelH + distance) + "px";
         update();
       }
@@ -853,7 +783,6 @@
       function update() {
         if (mobile() || REDUCED) return;
         var rect = section.getBoundingClientRect();
-        // pinning begins when the section top reaches the bottom of the header
         var travelled = Math.min(Math.max(headerH - rect.top, 0), distance);
         var p = distance > 0 ? travelled / distance : 1;
         track.style.transform = "translate3d(" + (-travelled) + "px,0,0)";
@@ -870,8 +799,6 @@
         clearTimeout(section._t);
         section._t = setTimeout(measure, 180);
       });
-      // re-measure once fonts and canvases have settled, or the travel
-      // distance is computed from the wrong track width
       setTimeout(measure, 60);
       window.addEventListener("load", measure);
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
@@ -921,7 +848,7 @@
 
   function boot() {
     initHeader(); initReveal(); initCounters();
-    initHero(); initViz(); initSliders(); initCarousels(); initWheel();
+    initHero(); initViz(); initSliders(); initWheel();
     initPainCheck(); initHScroll(); initVTimeline();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
